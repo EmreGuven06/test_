@@ -1,0 +1,17 @@
+
+name: C++ CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile C++ code
+        run: g++ -std=c++17 -Wall -Wextra -o app main.cpp
